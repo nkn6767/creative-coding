@@ -13,12 +13,29 @@
             margin-left: 3rem;
             margin-top: 3rem;
         }
+        .ransom-letter span {
+            color: orange;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            display: inline-block;
+            transform: rotate(0deg);
+        }
+        .ransom-letter span:nth-child(odd) {
+            font-family: 'Courier New', Courier, monospace;
+            transform: rotate(5deg);
+        }
+        .ransom-letter span:nth-child(even) {
+            font-family: 'Times New Roman', Times, serif;
+            transform: rotate(-5deg);
+        }
     </style>
 </head>
 <body>
 
     <div>
-        <p>This is a really cool webpage.</p>
+        <p class="ransom-letter">
+            <span>S</span><span>t</span><span>r</span><span>e</span><span>a</span><span>m</span> <span>m</span><span>y</span> <span>d</span><span>e</span><span>b</span><span>u</span><span>t</span> <span>p</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span> <span>"</span><span>S</span><span>p</span><span>l</span><span>e</span><span>c</span><span>k</span><span>"</span> <span>w</span><span>h</span><span>i</span><span>c</span><span>h</span> <span>i</span><span>s</span> <span>o</span><span>u</span><span>t</span> <span>n</span><span>o</span><span>w</span> <span>o</span><span>n</span> <span>a</span><span>l</span><span>l</span> <span>s</span><span>t</span><span>r</span><span>e</span><span>a</span><span>m</span><span>i</span><span>n</span><span>g</span> <span>p</span><span>l</span><span>a</span><span>t</span><span>f</span><span>o</span><span>r</span><span>m</span><span>s</span><span>.</span>
+        </p>
     </div>  
 </body>
-</html> 
+</html>
