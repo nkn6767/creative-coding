@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #eee;
+      background-color: #f5f5f5; /* Light gray background */
     }
     p {
       font-size: 80px;
@@ -16,34 +16,37 @@
       margin-top: 50px;
       color: #333;
       letter-spacing: 5px;
+      /* Split the statement into two spans for animation */
+      display: flex;
+      justify-content: center;
+      /* Initially hide the second part */
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
     }
     #grow:hover {
       cursor: pointer;
+    }
+    /* Style for the highlighted keyword (ecological) */
+    span.highlight {
+      color: #2e7d32; /* Green for ecological theme */
     }
   </style>
 </head>
 <body>
 
-  <p id="grow">We must direct our skills for the betterment of humanity towards a more ecological civilization</p>
+  <p id="grow">
+    We must direct our skills for the <span class="highlight">betterment of humanity</span> towards a more <span class="highlight">ecological</span> civilization
+  </p>
 
   <script type="text/javascript">
     let g = document.getElementById("grow");
 
-    // set the font-size property in JavaScript
-    g.style.fontSize = "100%";
-
-    // add a function to the onclick event
-    g.onclick = function(){
-
-      // determine current font size and convert it to an integer
-      let fs = Number(this.style.fontSize.replace("%",""));
-
-      // change the color of the clicked element 
-      this.style.color = "red";
-
-      // change the font size to increase it by 10%
-      this.style.fontSize = fs * 1.1 + "%";
-    };
+    // Add click event listener
+    g.addEventListener('click', function togglePosition() {
+      // Toggle opacity of the second part (ecological civilization)
+      let hiddenPart = this.querySelector(".highlight:nth-child(2)");
+      hiddenPart.style.opacity = hiddenPart.style.opacity === '0' ? '1' : '0';
+    });
   </script>
 
 </body>
