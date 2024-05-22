@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Concrete Manifesto</title> 
-    <!--
-        Use this page to complete the "Concrete Manifesto" exercise:
-        https://canvas.umw.edu/courses/1498218/assignments/11723270
-    -->  
-
-    <style type="text/css">
-
-    </style>
+  <meta charset="utf-8">
+  <title>Concrete Manifesto</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #eee;
+    }
+    p {
+      font-size: 80px;
+      text-align: center;
+      margin-top: 50px;
+      color: #333;
+      letter-spacing: 5px;
+    }
+    #grow:hover {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>This is a Manifesto</h1>
-    <p>This is a paragraph.</p>
+  <p id="grow">We must direct our skills for the betterment of humanity towards a more ecological civilization</p>
+
+  <script type="text/javascript">
+    let g = document.getElementById("grow");
+
+    // set the font-size property in JavaScript
+    g.style.fontSize = "100%";
+
+    // add a function to the onclick event
+    g.onclick = function(){
+
+      // determine current font size and convert it to an integer
+      let fs = Number(this.style.fontSize.replace("%",""));
+
+      // change the color of the clicked element 
+      this.style.color = "red";
+
+      // change the font size to increase it by 10%
+      this.style.fontSize = fs * 1.1 + "%";
+    };
+  </script>
 
 </body>
-</html> 
+</html>
