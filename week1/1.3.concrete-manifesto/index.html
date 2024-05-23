@@ -13,48 +13,53 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
-    p {
-      font-size: 40px; /* Adjust font size to fit the screen better */
+    #manifesto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      margin: 0;
+      transform-origin: center;
+      transition: transform 0.5s ease-in-out;
+    }
+    .part {
+      font-size: 40px;
       color: #333;
       letter-spacing: 2px;
+      margin: 10px;
       transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-      position: relative;
-    }
-    #grow {
       cursor: pointer;
-      display: inline-block;
     }
-    /* Style for the highlighted keyword (ecological) */
-    span.highlight {
+    .highlight {
       color: #2e7d32; /* Green for ecological theme */
+    }
+    .rotated {
+      transform: rotate(-10deg);
+    }
+    .shifted {
+      transform: translateY(-30px) rotate(10deg);
     }
   </style>
 </head>
 <body>
 
-  <p id="grow">
-    We must direct our skills for the <span class="highlight">betterment of humanity</span> towards a more <span class="highlight">ecological</span> civilization
-  </p>
+  <div id="manifesto">
+    <div class="part">We must direct our skills for the</div>
+    <div class="part highlight rotated">betterment of humanity</div>
+    <div class="part shifted">towards a more</div>
+    <div class="part highlight">ecological civilization</div>
+  </div>
 
   <script type="text/javascript">
-    let g = document.getElementById("grow");
+    let parts = document.querySelectorAll("#manifesto .part");
 
     // Add click event listener
-    g.addEventListener('click', function() {
-      // Toggle position and opacity of the highlighted parts
-      let firstPart = this.querySelector(".highlight:nth-of-type(1)");
-      let secondPart = this.querySelector(".highlight:nth-of-type(2)");
-
-      if (secondPart.style.opacity === '1') {
-        secondPart.style.opacity = '0';
-        secondPart.style.transform = 'translateY(20px)';
-      } else {
-        secondPart.style.opacity = '1';
-        secondPart.style.transform = 'translateY(-20px)';
-      }
+    parts.forEach(part => {
+      part.addEventListener('click', function() {
+        this.classList.toggle('rotated');
+        this.classList.toggle('shifted');
+      });
     });
   </script>
 
