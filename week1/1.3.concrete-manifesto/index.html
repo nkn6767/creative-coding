@@ -9,22 +9,23 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f5f5f5; /* Light gray background */
-    }
-    p {
-      font-size: 80px;
-      text-align: center;
-      margin-top: 50px;
-      color: #333;
-      letter-spacing: 5px;
-      /* Split the statement into two spans for animation */
       display: flex;
       justify-content: center;
-      /* Initially hide the second part */
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+      align-items: center;
+      height: 100vh;
     }
-    #grow:hover {
+    p {
+      font-size: 40px; /* Adjust font size to fit the screen better */
+      text-align: center;
+      margin: 0;
+      color: #333;
+      letter-spacing: 2px;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      position: relative;
+    }
+    #grow {
       cursor: pointer;
+      display: inline-block;
     }
     /* Style for the highlighted keyword (ecological) */
     span.highlight {
@@ -42,13 +43,20 @@
     let g = document.getElementById("grow");
 
     // Add click event listener
-    g.addEventListener('click', function togglePosition() {
-      // Toggle opacity of the second part (ecological civilization)
-      let hiddenPart = this.querySelector(".highlight:nth-child(2)");
-      hiddenPart.style.opacity = hiddenPart.style.opacity === '0' ? '1' : '0';
+    g.addEventListener('click', function() {
+      // Toggle position and opacity of the highlighted parts
+      let firstPart = this.querySelector(".highlight:nth-of-type(1)");
+      let secondPart = this.querySelector(".highlight:nth-of-type(2)");
+
+      if (secondPart.style.opacity === '1') {
+        secondPart.style.opacity = '0';
+        secondPart.style.transform = 'translateY(20px)';
+      } else {
+        secondPart.style.opacity = '1';
+        secondPart.style.transform = 'translateY(-20px)';
+      }
     });
   </script>
 
 </body>
 </html>
- 
