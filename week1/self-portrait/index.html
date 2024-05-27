@@ -4,22 +4,58 @@
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
 
-
-    <title>My Self Portrait</title> 
-    <!--
-        Use this page to complete the "Data Self Portrait" project:
-        https://canvas.umw.edu/courses/1498218/assignments/11723291
-    -->  
+    <title>My Self Portrait</title>
 
     <style type="text/css">
-
-
-
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .data-item {
+            position: relative;
+            width: 45%;
+            height: auto;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .data-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .data-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
     </style>
-
 </head>
 <body>
-
-
+    <!-- This project represents a data self-portrait, combining images and data visualization to present an artistic and detailed representation of my music career. I thought it would be cool to show both the analytical side of the music as well as the realism of performing to display both sides of the coin when it comes to this profession. The design choices include a flexible layout using CSS Flexbox, interactive hover effects, and visually appealing rounded corners and shadows. Each image is contained within a styled div to enhance presentation and user experience. -->
+    <div class="data-item">
+        <img src="ThatsTuff!.png" alt="That's Tuff!">
+    </div>
+    <div class="data-item">
+        <img src="openmic.jpg" alt="Open Mic">
+    </div>
+    <div class="data-item">
+        <img src="InsideOut.png" alt="Inside Out">
+    </div>
+    <div class="data-item">
+        <img src="amfest.jpg" alt="Amfest">
+    </div>
+    <div class="data-item">
+        <img src="GLOWSTICK!.png" alt="Glowstick!">
+    </div>
+    <div class="data-item">
+        <img src="pressphoto.jpg" alt="Press Photo">
+    </div>
 </body>
-</html> 
+</html>
