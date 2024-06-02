@@ -9,7 +9,7 @@ function setup() {
 
 function draw() {
     // Number of squares to draw
-    let numSquares = 10; 
+    let numSquares = 15; // Increased number of squares for more complexity
     let minSize = 50; // Minimum size of the squares
     let maxSize = 600; // Maximum size of the squares
     let centerX = width / 2;
@@ -24,11 +24,13 @@ function draw() {
         let size = map(i, 0, numSquares - 1, minSize, maxSize);
         
         // Random displacements for each square
-        let offsetX = random(-20, 20);
-        let offsetY = random(-20, 20);
+        let offsetX = random(-50, 50); // 
+        let offsetY = random(-50, 50); // 
         
-        // Draw the square
-        rectMode(CENTER);
-        rect(centerX + offsetX, centerY + offsetY, size, size);
+        push(); 
+        translate(centerX + offsetX, centerY + offsetY); // Move the origin
+        rectMode(CENTER); // Set the rect mode to CENTER
+        rect(0, 0, size, size); // Draw the square
+        pop(); 
     }
 }
